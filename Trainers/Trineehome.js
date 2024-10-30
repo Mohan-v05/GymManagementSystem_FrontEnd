@@ -206,46 +206,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Notification
 
-document.addEventListener("DOMContentLoaded", () => {
-  const notificationIcon = document.querySelector(".message img");
-  const notificationModal = document.getElementById("notificationModal");
-  const notificationList = document.getElementById("notification-list");
-  const closeModalButton = document.querySelector(".modal .close");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const notificationIcon = document.getElementById("messageimg");
+//   const notificationModal = document.getElementById("notificationModal");
+//   const notificationList = document.getElementById("notification-list");
+//   const closeModalButton = document.querySelector(".modal .close");
 
-  function loadNotifications() {
-    const notifications =
-      JSON.parse(localStorage.getItem("Notifications")) || [];
-    const gymId = JSON.parse(sessionStorage.getItem("gymId")); // Get the current user's gym ID
-    notificationList.innerHTML = "";
+//   function loadNotifications() {
+//     const notifications =
+//       JSON.parse(localStorage.getItem("Notifications")) || [];
+//     const gymId = JSON.parse(sessionStorage.getItem("gymId")); // Get the current user's gym ID
+//     notificationList.innerHTML = "";
 
-    notifications.forEach((notification) => {
-      if (notification.gymId == gymId) {
-        const listItem = document.createElement("li");
-        listItem.textContent = notification.message;
-        notificationList.appendChild(listItem);
-      }
-    });
+//     notifications.forEach((notification) => {
+//       if (notification.gymId == gymId) {
+//         const listItem = document.createElement("li");
+//         listItem.textContent = notification.message;
+//         notificationList.appendChild(listItem);
+//       }
+//     });
 
-    // Show modal if there are notifications
-    if (notificationList.children.length > 0) {
-      notificationModal.style.display = "block";
-    }
-  }
+//     // Show modal if there are notifications
+//     if (notificationList.children.length > 0) {
+//       notificationModal.style.display = "block";
+//     }
+//   }
 
-  // Show notifications modal
-  notificationIcon.addEventListener("click", () => {
-    loadNotifications();
-  });
+//   // Show notifications modal
+//   notificationIcon.addEventListener("click", () => {
+//     loadNotifications();
+//   });
 
-  // Close the modal
-  closeModalButton.addEventListener("click", () => {
-    notificationModal.style.display = "none";
-  });
+//   // Close the modal
+//   closeModalButton.addEventListener("click", () => {
+//     notificationModal.style.display = "none";
+//   });
 
-  // Close the modal if the user clicks outside of it
-  window.addEventListener("click", (event) => {
-    if (event.target === notificationModal) {
-      notificationModal.style.display = "none";
-    }
-  });
-});
+//   // Close the modal if the user clicks outside of it
+//   window.addEventListener("click", (event) => {
+//     if (event.target === notificationModal) {
+//       notificationModal.style.display = "none";
+//     }
+//   });
+// });
